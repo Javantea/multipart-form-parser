@@ -1,26 +1,30 @@
 {
-  "name": "@davidov541/multipart-form-parser",
-  "version": "1.1.1",
+  "name": "multipart-form-parser",
+  "version": "1.1.2",
   "description": "A javascript/nodejs multipart/form-data parser which operates on raw data.",
   "main": "multipart.js",
-  "author": "David McGinnis (mcginnda@davidmcginnis.net)",
+  "author": "Mauro Braggio <mauro@pox.it>",
   "license": "MIT",
   "scripts": {
     "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/davidov541/multipart-form-parser.git"
+    "url": "git+https://github.com/maurobraggio/multipart-form-parser.git"
   },
   "keywords": [
     "multipart/form-data",
     "form",
-    "fileuploader"
+    "fileuploader",
+    "lambda",
+    "apigateway",
+    "aws",
+    "serverless"
   ],
   "bugs": {
-    "url": "https://github.com/davidov541/multipart-form-parser/issues"
+    "url": "https://github.com/maurobraggio/multipart-form-parser/issues"
   },
-  "homepage": "https://github.com/davidov541/multipart-form-parser",
+  "homepage": "https://github.com/maurobraggio/multipart-form-parser",
   "devDependencies": {
     "jest": "^26.1.0"
   }

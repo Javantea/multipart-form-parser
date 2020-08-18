@@ -27,8 +27,8 @@ function parseHeaders(multipartBodyBuffer, startingIndex) {
   var headerFound = false;
 
   for (; i < multipartBodyBuffer.length; i++) {
-    const oneByte = multipartBodyBuffer[i];
-    const prevByte = i > 0 ? multipartBodyBuffer[i - 1] : null;
+    const oneByte = multipartBodyBuffer.charCodeAt(i);
+    const prevByte = i > 0 ? multipartBodyBuffer.charCodeAt(i-1) : null;
     const newLineDetected = oneByte == 0x0a && prevByte == 0x0d ? true : false;
     const newLineChar = oneByte == 0x0a || oneByte == 0x0d ? true : false;
 
@@ -68,8 +68,8 @@ function parseData(multipartBodyBuffer, startingIndex, boundary) {
   var buffer = [];
   var lastline = ""
   for (i = startingIndex; i < multipartBodyBuffer.length; i++) {
-    const oneByte = multipartBodyBuffer[i];
-    const prevByte = i > 0 ? multipartBodyBuffer[i - 1] : null;
+    const oneByte = multipartBodyBuffer.charCodeAt(i);
+    const prevByte = i > 0 ? multipartBodyBuffer.charCodeAt(i-1) : null;
     const newLineDetected = oneByte == 0x0a && prevByte == 0x0d ? true : false;
     const newLineChar = oneByte == 0x0a || oneByte == 0x0d ? true : false;
 
