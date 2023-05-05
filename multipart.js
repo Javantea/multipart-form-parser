@@ -113,6 +113,13 @@ function transformFieldInfo(field) {
   {
     newField.filename = fileNames[0].filename
   }
+  const names = assignments.filter(p => p.name)
+  if (names.length > 0)
+  {
+    newField.name = names[0].name;
+  } else {
+    newField.name = '';
+  }
 
   const contentTypeValue = field.type.split(":")[1]
   if (contentTypeValue)
@@ -157,7 +164,7 @@ exports.Parse = function (multipartBodyBuffer, boundary) {
 
     const info = parseData(multipartBodyBuffer, headerInfo.endOffset, boundary);
     i = info.endOffset;
-    const fieldInfo = { disposition: headerInfo.contentDisposition, type: headerInfo.contentType, data: info.data };
+    const fieldInfo = { disposition: headerInfo.contentDisposition, type: headerInfo.contentType, data: info.data, name: headerInfo.name };
     allParts.push(transformFieldInfo(fieldInfo));
   }
   return allParts;
@@ -175,3 +182,5 @@ exports.getBoundary = function (header) {
   }
   return parseAssignment(boundaryItems[0]).boundary;
 };
+
+
